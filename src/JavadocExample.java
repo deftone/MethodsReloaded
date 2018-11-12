@@ -60,7 +60,7 @@ public class JavadocExample {
 
 
 
-    private enum Orchestra{
+    public enum Orchestra{
         /** Holzblaeser wie Floeten, Klarinetten*/
         WOODWIND,
         /** Blechblaeser wie Hoerner, Trompeten*/

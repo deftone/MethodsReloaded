@@ -7,22 +7,24 @@ public class OptionalExample {
         TnsSomeObject tnsSomeObject = getTnsSomeObject(1);
         System.out.println(tnsSomeObject.getSomeName());
 
-        TnsSomeObject tnsSomeObjectNull = getTnsSomeObject(2);
-        System.out.println(tnsSomeObjectNull.getSomeName());
+//        TnsSomeObject tnsSomeObjectNull = getTnsSomeObject(2);
+//        System.out.println(tnsSomeObjectNull.getSomeName());
 
 
-//        Optional<TnsSomeObject> tnsSomeObjectOptional = getTnsSomeObjectBetter(2);
-//        //erste moeglichkeit: pruefen -> isPresent kann aber oft ersetzt werden! s.u.
-//        if (tnsSomeObjectOptional.isPresent())
-//            System.out.println(tnsSomeObjectOptional.get().getSomeName());
-//
-//        //zweite moeglichkeit: was default (koennte man aber auch zurueckgeben - falls immer gueltig)
-//        TnsSomeObject tnsSomeObjectBetter = tnsSomeObjectOptional.orElse(TnsSomeObject.getInstance(0, "default"));
-//        System.out.println(tnsSomeObjectBetter.getSomeName());
-//
-//        //dritte moeglichkeit: exception wenn empty
-//        tnsSomeObjectBetter = tnsSomeObjectOptional.orElseThrow(() -> new Exception("nothing found"));
-//        System.out.println(tnsSomeObjectBetter.getSomeName());
+        Optional<TnsSomeObject> tnsSomeObjectOptional = getTnsSomeObjectBetter(2);
+        //erste moeglichkeit: pruefen -> isPresent kann aber oft ersetzt werden! s.u.
+        if (tnsSomeObjectOptional.isPresent())
+            System.out.println(tnsSomeObjectOptional.get().getSomeName());
+
+
+        //zweite moeglichkeit: was default (koennte man aber auch zurueckgeben - falls immer gueltig)
+        TnsSomeObject tnsSomeObjectBetter = tnsSomeObjectOptional.get();
+//                orElse(TnsSomeObject.getInstance(0, "default"));
+        System.out.println(tnsSomeObjectBetter.getSomeName());
+
+        //dritte moeglichkeit: exception wenn empty
+        tnsSomeObjectBetter = tnsSomeObjectOptional.orElseThrow(() -> new Exception("nothing found"));
+        System.out.println(tnsSomeObjectBetter.getSomeName());
 
 
     }

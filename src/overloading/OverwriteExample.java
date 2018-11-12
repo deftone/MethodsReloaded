@@ -10,12 +10,26 @@ public class OverwriteExample {
 
         for (Starship ship : ships) {
             System.out.println(ship.getType());
+            itsAtrap(ship);
         }
     }
 
+    //overloaded functions -> determined at compile time
+    public static void itsAtrap(Starship ss) {
+        System.out.println("Starship");
+
+    }
+    public static void itsAtrap(KlingonShip ss) {
+        System.out.println("Klingon");
+
+    }
+    public static void itsAtrap(BirdOfPrey ss) {
+        System.out.println("BOP");
+
+    }
 }
 
-
+//overwritten functions -> determined at runtime
 class Starship {
     /**
      * gets type of a star ship.

@@ -10,7 +10,7 @@ public class ValidationExample {
     /**
      *
      *
-     * @NotNull can be used to document that no null values are allowed, but that does not do a nullcheck!
+     * @NotNull can be used to document that no null values are allowed, but that does not do a null check!
      *
      * @param numberOfValidations number of validations, must be positive!
      * @param author who did this, can not be null!
@@ -27,16 +27,16 @@ public class ValidationExample {
 //        goodValidation(null);
 
 //        goodValidation(-3);
-
+//
 //        betterValidation(null);
 
         System.out.println(useAssertionsForPrivateMethods(new int[]{1, 2}, 2));
 //        System.out.println(useAssertionsForPrivateMethods(null, 3));
 //        System.out.println(useAssertionsForPrivateMethods(new int[]{1, 2}, 0));
-//        System.out.println(useAssertionsForPrivateMethods(new int[]{1, 2}, 3));
-
-        ValidationExample validation = new ValidationExample(2, null);
-        System.out.println(validation.numberOfValidations);
+        System.out.println(useAssertionsForPrivateMethods(new int[]{1, 2}, 3));
+//
+//        ValidationExample validation = new ValidationExample(2, null);
+//        System.out.println(validation.numberOfValidations);
     }
 
     /**
@@ -44,10 +44,10 @@ public class ValidationExample {
      *
      * @param number ...
      * @return ...
-     * @throws NullPointerException for invalid input
-     * @throws ArithmeticException  for negative input
+     * @throws NullPointerException if input is invalid
+     * @throws ArithmeticException  if input is negative
      */
-    public static Integer goodValidation(Integer number) {
+    private static Integer goodValidation(Integer number) {
         if (number == null)
             throw new NullPointerException("number can not be null!");
         if (number <= 0)
@@ -58,7 +58,7 @@ public class ValidationExample {
     }
 
 
-    public static Integer betterValidation(Integer number) {
+    private static Integer betterValidation(Integer number) {
         int useThisForTheCalculation = Objects.requireNonNull(number, "optional message: number can not be null");
 
         if (number <= 0)

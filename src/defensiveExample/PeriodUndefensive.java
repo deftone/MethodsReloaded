@@ -7,7 +7,7 @@ public class PeriodUndefensive {
     private final Date start;
     private final Date end;
 
-    PeriodUndefensive(Date start, Date end) {
+    private PeriodUndefensive(Date start, Date end) {
         if (start.compareTo(end) > 0)
             throw new IllegalArgumentException("start muss vor ende sein!");
         this.start = start;

@@ -7,8 +7,15 @@ public class NullExample {
 
     public static void main(String[] args) {
 
-        Set<Integer> good = goodExample();
+        List<Integer> bad = badExample();
+        System.out.println("bad, makes nullpointer");
+        //additional code necessary! or nullpointer
+        if (bad != null)
+        for (Integer i : bad) {
+            System.out.printf(String.valueOf(i));
+        }
 
+        Set<Integer> good = goodExample();
         System.out.println("good");
         for (Integer i : good) {
             System.out.printf(String.valueOf(i));
@@ -17,13 +24,6 @@ public class NullExample {
         Set<Integer> goodOptimized = goodExampleOptimized();
         System.out.println("good optimized");
         for (Integer i : goodOptimized) {
-            System.out.printf(String.valueOf(i));
-        }
-
-        List<Integer> bad = badExample();
-        System.out.println("bad, makes nullpointer");
-//        if (bad != null)
-        for (Integer i : bad) {
             System.out.printf(String.valueOf(i));
         }
 

@@ -6,7 +6,7 @@ public class Thermometer {
         this.scale = scale;
     }
 
-    public static Thermometer newInstance(TemperaturScale scale){
+    private static Thermometer newInstance(TemperaturScale scale){
         return new Thermometer(scale);
     }
 
@@ -19,6 +19,8 @@ public class Thermometer {
         Thermometer celsiusThermometer = Thermometer.newInstance(TemperaturScale.CELSIUS);
         //than e.g.
 //        Thermometer celsiusThermometer = Thermometer.newInstance(true);
+
+        Thermometer fahrenheitThermometer = Thermometer.newInstance(TemperaturScale.FAHRENHEIT);
     }
     
 

@@ -11,7 +11,7 @@ public class PeriodDefensive {
     private final Date end;
 
     //Korrigierter Konstruktor, der defensive Kopien erstellt
-    PeriodDefensive(Date start, Date end) {
+    private PeriodDefensive(Date start, Date end) {
 
         //nicht clone benutzen! da Date nicht final ist, koennte eine boesartige Subklasse von Date erzeugt werden.
         this.start = new Date(start.getTime());

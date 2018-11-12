@@ -17,7 +17,10 @@ public class AutoboxingExample {
         }
 
         for (int i = 0; i < 3; i++) {
+            //remove item at index
             list.remove(i);
+            //remove object
+//            list.remove((Integer)i);
             set.remove(i);
         }
 
